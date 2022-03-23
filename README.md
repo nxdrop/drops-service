@@ -314,6 +314,79 @@ GET /airdrops/listDrop
 
 > 返回示例
 
+> 成功
+
+```json
+{
+  "code": 0,
+  "msg": "ok",
+  "data": [
+    {
+      "_id": "623a95b49998ab0ddec08824",
+      "dropid": "20",
+      "info": {
+        "name": "空投项目1",
+        "officalSite": "",
+        "logoUri": "https://gateway.pinata.cloud/ipfs/QmNbgVii5zsywA5xLreA8KuC8Y8twmoXR9d2z74jEaDSyg",
+        "description": "空投测试aaa",
+        "dropTotal": 4
+      },
+      "nftMetadataStructure": [
+        {
+          "info": {
+            "description": "空投项目Test",
+            "external_url": "",
+            "image": "https://gateway.pinata.cloud/ipfs/QmPTq4aSfUpogxfipi1w5s8ekVT6EqwmPL3KpAu5p42g9t/9.png",
+            "name": "NFTTest0001",
+            "attributes": [
+              {
+                "trait_type": "Base",
+                "value": "Starfish"
+              },
+              {
+                "trait_type": "Eyes",
+                "value": "Big"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_id": "623ac0db6645da8de01d5222",
+      "dropid": "21",
+      "info": {
+        "name": "空投项目2",
+        "officalSite": "",
+        "logoUri": "https://gateway.pinata.cloud/ipfs/QmNbgVii5zsywA5xLreA8KuC8Y8twmoXR9d2z74jEaDSyg",
+        "description": "空投测试aaa",
+        "dropTotal": 4
+      },
+      "nftMetadataStructure": [
+        {
+          "info": {
+            "description": "空投项目Test",
+            "external_url": "",
+            "image": "https://gateway.pinata.cloud/ipfs/QmPTq4aSfUpogxfipi1w5s8ekVT6EqwmPL3KpAu5p42g9t/9.png",
+            "name": "NFTTest0001",
+            "attributes": [
+              {
+                "trait_type": "Base",
+                "value": "Starfish"
+              },
+              {
+                "trait_type": "Eyes",
+                "value": "Big"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
 ### 返回结果
 
 |状态码|状态码含义|说明|数据模型|
@@ -335,6 +408,50 @@ GET /airdrops/tokenURI
 |tokenId|query|string| 否 |NFT的tokenId，uint256类型|
 
 > 返回示例
+
+### 返回结果
+
+|状态码|状态码含义|说明|数据模型|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|成功|Inline|
+
+### 返回数据结构
+
+## GET 获取用户来领取NFT空投proof信息
+
+GET /airdrops/getClaimProof
+
+获取用户来领取NFT空投proof信息
+
+> Body 请求参数
+
+```yaml
+{}
+
+```
+
+### 请求参数
+
+|名称|位置|类型|必选|说明|
+|---|---|---|---|---|
+|dropId|query|string| 是 |要领取的空投的批次Id，uint256类型|
+|address|query|string| 是 |用户钱包地址|
+|body|body|object| 否 |none|
+
+> 返回示例
+
+> 成功
+
+```json
+{
+  "code": 0,
+  "msg": "ok",
+  "data": [
+    "0x3b06c5aef68238d94e75d563356c602f3d811acdf5fe4cda62346429af69d615",
+    "0xa7b5f6c6ea83ecfa05944390d0c4ad630668029f462b4aeb09df144dbe906d96"
+  ]
+}
+```
 
 ### 返回结果
 
