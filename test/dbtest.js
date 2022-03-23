@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient
-var url = "mongodb://112.126.78.54"
+// var url = "mongodb://youruser:yourpassword2@localhost/yourdatabase"
 
 async function run() {
     var conn = null
