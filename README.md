@@ -423,20 +423,12 @@ GET /airdrops/getClaimProof
 
 获取用户来领取NFT空投proof信息
 
-> Body 请求参数
-
-```yaml
-{}
-
-```
-
 ### 请求参数
 
 |名称|位置|类型|必选|说明|
 |---|---|---|---|---|
 |dropId|query|string| 是 |要领取的空投的批次Id，uint256类型|
 |address|query|string| 是 |用户钱包地址|
-|body|body|object| 否 |none|
 
 > 返回示例
 
@@ -446,10 +438,16 @@ GET /airdrops/getClaimProof
 {
   "code": 0,
   "msg": "ok",
-  "data": [
-    "0x3b06c5aef68238d94e75d563356c602f3d811acdf5fe4cda62346429af69d615",
-    "0xa7b5f6c6ea83ecfa05944390d0c4ad630668029f462b4aeb09df144dbe906d96"
-  ]
+  "data": {
+    "address": "0x51a41ba1ce3a6ac0135ae48d6b92bed32e075ff0",
+    "tokenId": 110,
+    "leaf": "0xdeaad27b02fa71c65d83387a45bc2d214ecefb1b742930394a2c19db79c2f895",
+    "proof": [
+      "0x3b06c5aef68238d94e75d563356c602f3d811acdf5fe4cda62346429af69d615",
+      "0xa7b5f6c6ea83ecfa05944390d0c4ad630668029f462b4aeb09df144dbe906d96"
+    ],
+    "dropId": "20"
+  }
 }
 ```
 
